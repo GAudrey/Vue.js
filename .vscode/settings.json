@@ -6,4 +6,5 @@
     "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "octref.vetur",
+  "volar.inlayHints.eventArgumentInInlineHandlers": false,
 }

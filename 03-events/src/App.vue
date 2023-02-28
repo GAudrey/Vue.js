@@ -25,14 +25,29 @@ const sounds = ref([
   },
 ]);
 
+const secret = ref(false);
+
 // Propagation d'événement
 const onClickRow = (title) => {
   console.log(`ROW CLICK: ${title}`);
 };
 
 const onClickIcon = (title) => {
-  // Empêche la propagation -> e.stopPropagation();
+  // Empêche la propagation en js -> e.stopPropagation();
   console.log(`ICON CLICK: ${title}`);
+};
+
+const secretAction = () => {
+  alert("Vous avez trouver la première action secrète.");
+  secret.value = true;
+};
+
+const destroyApp = () => {
+  sounds.value = [];
+  secret.value = false;
+  alert(
+    "Vous avez trouvé la deuxième action secrète. Vous venez de détruire l'application."
+  );
 };
 </script>
 
@@ -40,6 +55,7 @@ const onClickIcon = (title) => {
   <div class="bg-slate-50 flex flex-col min-h-screen">
     <header
       class="mt-6 mx-8 shadow-md rounded-md flex justify-center bg-white overflow-hidden"
+      @click.alt="secretAction"
     >
       <img src="/logo.png" alt="logo" class="w-16 animation-image" />
     </header>
@@ -72,6 +88,12 @@ const onClickIcon = (title) => {
             />
           </svg>
         </button>
+      </div>
+      <div v-if="secret">
+        <h2 class="title primary">Entrez l'action secrète</h2>
+        <div class="form-control input">
+          <input type="text" @keyup.shift.space="destroyApp" />
+        </div>
       </div>
     </main>
   </div>
