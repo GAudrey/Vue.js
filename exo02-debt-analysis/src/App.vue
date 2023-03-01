@@ -6,30 +6,22 @@ const income = ref({ incomeT: "", incomeA: 0 });
 const expenseList = ref([]);
 const expense = ref({ expenseT: "", expenseA: 0 });
 
-const toggleIncomeIsDisabled = computed(() => {
-  return !income.value.incomeT || !income.value.incomeA;
-});
+const toggleIncomeIsDisabled = computed(
+  () => !income.value.incomeT || !income.value.incomeA
+);
+
+const toggleExpenseIsDisabled = computed(
+  () => !expense.value.expenseT || !expense.value.expenseA
+);
 
 const addIncome = () => {
   incomeList.value.push(income.value);
   income.value = { incomeT: "", incomeA: 0 };
 };
 
-const deleteIncome = (incomeItem) => {
-  incomeList.value.splice(incomeList.value.indexOf(incomeItem), 1);
-};
-
-const toggleExpenseIsDisabled = computed(() => {
-  return !expense.value.expenseT || !expense.value.expenseA;
-});
-
 const addExpense = () => {
   expenseList.value.push(expense.value);
   expense.value = { expenseT: "", expenseA: 0 };
-};
-
-const deleteExpense = (expenseItem) => {
-  expenseList.value.splice(expenseList.value.indexOf(expenseItem), 1);
 };
 
 const calculateBalance = computed(() => {
@@ -45,6 +37,14 @@ const calculateBalance = computed(() => {
 
   return globalIncome - globalExpense;
 });
+
+const deleteExpense = (index) => {
+  expenseList.value.splice(index, 1);
+};
+
+const deleteIncome = (index) => {
+  incomeList.value.splice(index, 1);
+};
 </script>
 
 <template>
@@ -58,7 +58,7 @@ const calculateBalance = computed(() => {
       <div class="grid grid-cols-2 justify-evenly p-10">
         <div class="mx-auto">
           <form class="border-b border-b-gray-300" @submit.prevent="addIncome">
-            <h2 class="text-xl font-semibold">Revenus</h2>
+            <h2 class="title primary">Revenus</h2>
             <div class="form-control input flex gap-x-4">
               <div>
                 <label for="incomeTitle">Titre</label>
@@ -117,7 +117,7 @@ const calculateBalance = computed(() => {
         </div>
         <div class="mx-auto">
           <form class="border-b border-b-gray-300" @submit.prevent="addExpense">
-            <h2 class="text-xl font-semibold">Sorties</h2>
+            <h2 class="title primary">Dépenses</h2>
             <div class="form-control input flex gap-x-4">
               <div>
                 <label for="expenseTitle">Titre</label>
