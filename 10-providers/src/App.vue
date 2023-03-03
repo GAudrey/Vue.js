@@ -1,11 +1,14 @@
 <script setup>
 import Header from "./ui/Header.vue";
-import { ref } from "vue";
+import { ref, provide } from "vue";
 
 const isLogged = ref(false);
 const toggleConnect = () => {
   isLogged.value = !isLogged.value;
 };
+
+provide("logginStatus", isLogged);
+provide("changeLogginStatus", toggleConnect);
 </script>
 
 <template>

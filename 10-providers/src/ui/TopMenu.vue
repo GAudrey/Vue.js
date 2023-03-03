@@ -1,3 +1,10 @@
+<script setup>
+import { inject } from "vue";
+
+const toggleConnect = inject("changeLogginStatus");
+const isConnect = inject("logginStatus");
+</script>
+
 <template>
   <div class="flex space-x-8">
     <svg
@@ -7,6 +14,7 @@
       stroke-width="1.5"
       stroke="currentColor"
       class="w-10 h-10 text-gray-300"
+      :class="{ 'text-emerald-600': isConnect }"
     >
       <path
         stroke-linecap="round"
@@ -21,6 +29,7 @@
       stroke-width="1.5"
       stroke="currentColor"
       class="w-10 h-10 text-gray-300"
+      :class="{ 'text-emerald-600': isConnect }"
     >
       <path
         stroke-linecap="round"
@@ -33,6 +42,8 @@
         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
       />
     </svg>
-    <button class="btn cancel">Se déconnecter</button>
+    <button class="btn cancel" v-if="isConnect" @click="toggleConnect">
+      Se déconnecter
+    </button>
   </div>
 </template>

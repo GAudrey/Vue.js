@@ -42,3 +42,18 @@ Dans cette application, vous allez mettre en place une recherche sur cette API. 
 Afficher le résultat dans un component Result.vue avec le nom, la cause de la mort et la description pour chaque résultat reçu.
 
 Ajouter également un bouton "Réinitialiser la recherche" dans le cas où on a un résultat qui supprime la recherche et le résultat
+
+**Exo 4 - Crypto-market**
+
+Dans cette application, vous allez créer 3 components :
+- "Header.vue" qui contiendra le header avec un bouton de connexion/déconnexion
+- "FormCrypto.vue" qui contiendra le formulaire pour ajouter une crypto. Vous devrez fournir le nom de la crypto et le svg
+- "CryptoElement.vue" qui contiendra l'affichage de notre svg et on retrouvera le nom de la crypto à droite
+
+Détails technique:
+- Pour gérer la connexion/déconnexion, vous allez utiliser le provide/inject tout en prêtant attention à le gérer au plus haut niveau ;-)
+- Le formulaire sera disabled si l'utilisateur n'est pas connecté. Le bouton "Ajouter" le sera également. Et d'ailleurs, le bouton "Ajouter" sera désactivé si il manque un champs dans le formulaire.
+- Le component "CryptoElement" devra utiliser un slot pour le svg.
+
+Ressources:
+- Pour les svg, vous pouvez prendre les icones sur le site suivant: https://icones.js.org/collection/all
