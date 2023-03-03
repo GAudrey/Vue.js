@@ -1,0 +1,34 @@
+{
+    "darwins": [
+      {
+        "id": 1,
+        "name": "Vincent Timètres",
+        "death": "Mort à cause d’un timbre manquant",
+        "description": "Un homme a ouvert une lettre piégée qu’il avait envoyée et qui lui avait été retournée par la poste parce qu’il manquait le timbre"
+      },
+      {
+        "id": 2,
+        "name": "Andy Capé",
+        "death": "Mort à cause d’un soutien-gorge tueur",
+        "description": "A Philipsburg, un jeune homme s’est étouffé mortellement en avalant le soutien-gorge pailleté d’une strip-teaseuse, qu’il lui avait retiré avec les dents."
+      },
+      {
+        "id": 3,
+        "name": "Vick Time",
+        "death": "Tué par le sport",
+        "description": "Un agent de change de San Francisco, qui d’après sa femme faisait le vide total dans sa tête quand il courait, s’est tué pendant son jogging en tombant dans un ravin de 60 mètres."
+      },
+      {
+        "id": 4,
+        "name": "Vincent Times",
+        "death": "Mort à cause d’un chien dressé",
+        "description": "Un homme en Alaska a lancé un bâton de dynamite sur un lac gelé, pour on ne sait quelles raisons. Sauf que, accompagné de son chien de chasse très bien dressé, celui-ci lui a rapporté. Aïe."
+      },
+      {
+        "id": 5,
+        "name": "Henri Chie",
+        "death": "Mort à cause d’une canne à pêche originale",
+        "description": "Un braconnier qui pêchait en électrocutant les poissons à l’aide d’un cable en Pologne, subit le même sort que sa proie quand il tomba dans l’eau."
+      }
+    ]
+  }
