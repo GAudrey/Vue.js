@@ -10,6 +10,9 @@
 - Extension Vue language features (Volar)
 - Extension Vetur -> réindentation à la sauvegarde
 
+- State management : possibilité d'itentifier et gérer l'état de la page via l'URL ET référencement !
+- Un gros fichier est préférable à plusieurs petits fichiers car une seule requête
+
 
 **Exo 1 - Catspam**
 
